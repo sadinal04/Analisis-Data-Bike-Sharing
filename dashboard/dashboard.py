@@ -3,6 +3,10 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+
+# Dapatkan path absolut berdasarkan lokasi file script
+base_path = os.path.dirname(__file__)  # Lokasi direktori script ini berada
 
 # Path ke masing-masing file
 df_day = os.path.join(base_path, "day.csv")
