@@ -9,8 +9,12 @@ import os
 base_path = os.path.dirname(__file__)  # Lokasi direktori script ini berada
 
 # Path ke masing-masing file
-df_day = os.path.join(base_path, "day.csv")
-df_hour = os.path.join(base_path, "hour.csv")
+day_file_path = os.path.join(base_path, "day.csv")
+hour_file_path = os.path.join(base_path, "hour.csv")
+
+# Baca file CSV menjadi DataFrame Pandas
+df_day = pd.read_csv(day_file_path)
+df_hour = pd.read_csv(hour_file_path)
 
 # Mapping kategori
 df_day['season'] = df_day['season'].map({1: 'Spring', 2: 'Summer', 3: 'Fall', 4: 'Winter'})
