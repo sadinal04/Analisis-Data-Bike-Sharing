@@ -4,9 +4,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset
-df_day = pd.read_csv("day.csv")
-df_hour = pd.read_csv("hour.csv")
+# Dapatkan path absolut berdasarkan lokasi file script
+base_path = os.path.dirname(__file__)  # Lokasi direktori script ini berada
+
+# Path ke masing-masing file
+df_day = os.path.join(base_path, "day.csv")
+df_hour = os.path.join(base_path, "hour.csv")
 
 # Mapping kategori
 df_day['season'] = df_day['season'].map({1: 'Spring', 2: 'Summer', 3: 'Fall', 4: 'Winter'})
